@@ -1,0 +1,30 @@
+<% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+        <%= notice %>
+    </p>
+<% end %>
+
+<h1 class="font-bold text-2xl">Products Manager</h1>
+
+<div class="mt-4">
+    <h1 class="font-bold text-lg mb-7">Search</h1>
+    <%= render "search" %>
+</div>
+
+<div id="products">
+    <h1 class="font-bold text-lg mb-7">Products</h1>
+
+    <turbo-frame id="products">
+        <%= render "products", products: @products %>
+    </turbo-frame>
+</div>
+
+<div class="mt-4">
+    <h1 class="font-bold text-lg mb-7">Add Product</h1>
+    <%= render "form", product: @product %>
+</div>
+
+<div class="mt-4">
+    <h1 class="font-bold text-lg mb-7">Load Products & Feedbacks</h1>
+    <%= render "upload" %>
+</div>

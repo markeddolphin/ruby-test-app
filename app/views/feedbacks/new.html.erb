@@ -1,0 +1,16 @@
+<% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice">
+        <%= notice %>
+    </p>
+<% end %>
+
+<h2>Leave Feedback for <%= @product.name %></h2>
+
+<%= form_with(model: @feedback) do |f| %>
+    <%= f.hidden_field :product_id, value: @product.id %>
+    <%= f.number_field :rating, placeholder: "Select Rating",
+    min: 1, max: 5, step: 1,
+    required: true,
+    class:"inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+    <%= f.submit "Submit Feedback" , class: "btn py-2 ml-2 bg-blue-600 text-white"%>
+<% end %>

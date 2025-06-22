@@ -1,0 +1,16 @@
+<%= form_with(url: products_path, method: :get, data: {turbo_frame: "products",controller: "search-form", turbo_action: "advance" })do |form| %>
+    <div class="mb-5">
+        <%= label_tag :name, "Product Name" %>
+        <%= text_field_tag :name, params[:name], placeholder: "Search name...",
+            class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none",
+            data: { action: "input->search-form#search" }
+        %>
+
+        <%= label_tag :rating, "Rating" %>
+        <%= number_field_tag :rating, params[:rating], 
+            min: 1, max: 5, step: 1,
+            class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none",
+            data: { action: "input->search-form#search" }
+        %>
+    </div>
+<% end %>

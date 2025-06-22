@@ -1,0 +1,6 @@
+<div class="block mb-2">
+    <%= product.name %>
+    Average Rating: <%= product.average_rating %> (Number of Rating: <%= product.count_rating%>)
+    <%= link_to "Add Feedback", new_feedback_path(product_id: product.id), class: "btn bg-red-100", data: {turbo: false} %>
+    <%= link_to "View Feedback", product_feedbacks_path(product_id: product.id), class: "btn bg-gray-100", data: {turbo: false} %>
+</div>

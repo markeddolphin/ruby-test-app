@@ -6,6 +6,10 @@ class ProductsController < ApplicationController
 
         if params[:name].present?
             @products = @products.where("name LIKE ?", "%#{params[:name]}%")
+                                .joins(:feedbacks)
+                                .group("products.id")
+                                .order('AVG(feedbacks.rating) DESC')
+
         end
 
         if params[:rating].present?

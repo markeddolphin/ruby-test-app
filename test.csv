@@ -1,8 +1,15 @@
-product,rating
-1,5
-2,3
-test,4
-new_test,5
-4,5
-2,3
-test1,2
+product,rating,feedback
+product1,4,this is feedback1
+product2,5,this is feedback2
+product3,3,this is feedback3
+product4,4,this is feedback4
+product5,5,this is feedback5
+product6,3,this is feedback6
+product7,5,this is feedback7
+product8,4,this is feedback8
+product9,2,this is feedback9
+product10,1,this is feedback10
+product11,3,this is feedback11
+product12,4,this is feedback12
+product13,5,this is feedback13
+product14,4,this is feedback14

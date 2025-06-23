@@ -14,6 +14,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_06_21_044156) do
   create_table "feedbacks", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "product_id"
     t.integer "rating"
+    t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

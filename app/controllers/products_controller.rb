@@ -12,6 +12,7 @@ class ProductsController < ApplicationController
             @products = @products.joins(:feedbacks)
                                 .group("products.id")
                                 .having("AVG(feedbacks.rating) >= ? AND AVG(feedbacks.rating) < ?", params[:rating].to_f, params[:rating].to_f+1)
+                                .order('AVG(feedbacks.rating) DESC')
         end
 
         if turbo_frame_request?

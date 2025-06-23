@@ -19,7 +19,8 @@ class CsvImportService
 
         Feedback.create!(
             product_id: product.id,
-            rating: row["rating"]
+            rating: row["rating"],
+            content: row["feedback"],
         )
     end        
     end

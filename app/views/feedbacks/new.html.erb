@@ -8,6 +8,11 @@
 
 <%= form_with(model: @feedback) do |f| %>
     <%= f.hidden_field :product_id, value: @product.id %>
+    <%= label_tag :content, "Feedback" %>
+    <%= f.text_field :content, placeholder: "Please input feedback...",
+        class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none"
+    %>
+    <%= label_tag :rating, "Rating" %>
     <%= f.number_field :rating, placeholder: "Select Rating",
     min: 1, max: 5, step: 1,
     required: true,
